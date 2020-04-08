@@ -24,3 +24,4 @@ Case.pdf
 /node_modules
 
 /coverage
+/docker/.env
