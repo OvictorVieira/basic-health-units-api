@@ -33,13 +33,19 @@ RSpec.describe Institute, type: :model do
     end
 
     it "is not valid without a latitude" do
-      institute.lat = nil
+      institute.latitude = nil
 
       expect(institute).to_not be_valid
     end
 
     it "is not valid without a longitude" do
-      institute.long = nil
+      institute.longitude = nil
+
+      expect(institute).to_not be_valid
+    end
+
+    it "is not valid without a neighborhood" do
+      institute.neighborhood = nil
 
       expect(institute).to_not be_valid
     end

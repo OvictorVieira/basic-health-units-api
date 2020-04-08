@@ -3,8 +3,9 @@ FactoryBot.define do
     name { Faker::Name.name }
     address { Faker::Address.street_name }
     city { Faker::Address.city }
+    neighborhood { Faker::Address.community }
     phone { }
-    lat { Faker::Address.latitude }
-    long { Faker::Address.longitude }
+    latitude { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
   end
 end
