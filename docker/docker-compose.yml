@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: BhU2020!
+    ports:
+      - 15432:5432
+    volumes:
+      - ../dump_postgres:/var/www/html/basic-health-units/dump
+    networks:
+      - database-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    env_file:
+      - .env
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: BhU2020!
+    ports:
+      - 16543:80
+    depends_on:
+      - postgres
+    networks:
+      - database-network
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    environment:
+      - VIRTUAL_HOST=dev.portainer
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ../../portainer_data/:/var/www/html/portainer_data
+    ports:
+      - 9000:9000
+    restart: always
+
+  application:
+    tty: true
+    stdin_open: true
+    build: ./
+    container_name: basic-health-units
+    env_file:
+      - .env
+    environment:
+      RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+    privileged: true
+    volumes:
+      - ../:/var/www/html/basic-health-units
+    ports:
+      - 3000:3000
+      - 80:80
+    depends_on:
+      - postgres
+    networks:
+      - database-network
+
+networks:
+  database-network:
+    driver: bridge
