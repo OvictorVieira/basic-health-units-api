@@ -3,7 +3,7 @@ require 'sidekiq/testing'
 
 RSpec.describe GetAllOperationInstitutes, type: :cron do
 
-  context 'Import ubs data from Brazilian open data portal' do
+  context 'Enqueue worker for import ubs data from Brazilian open data portal' do
 
     it 'when government API returns data success' do
 
