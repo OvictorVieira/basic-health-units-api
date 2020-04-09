@@ -1,0 +1,38 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: http://i3geo.saude.gov.br/i3geo/ogc.php?outputFormat=JSON&request=GetFeature&service=WFS&typeName=ubs_funcionamento&version=1.0.0
+      body:
+        encoding: US-ASCII
+        string: ''
+      headers:
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+        User-Agent:
+          - Ruby
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Date:
+          - Thu, 09 Apr 2020 00:12:13 GMT
+        Server:
+          - Apache/2.2.15 (Red Hat)
+        X-Powered-By:
+          - PHP/5.3.3
+        Vary:
+          - Accept-Encoding
+        Transfer-Encoding:
+          - chunked
+        Content-Type:
+          - application/json; subtype=geojson
+      body:
+        encoding: ASCII-8BIT
+        string: '{}'
+      http_version: null
+    recorded_at: Thu, 09 Apr 2020 00:12:29 GMT
+recorded_with: VCR 5.1.0

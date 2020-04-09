@@ -15,6 +15,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require_relative '../config/spec/support/simplecov_config'
+require_relative '../config/spec/support/vcr_config'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

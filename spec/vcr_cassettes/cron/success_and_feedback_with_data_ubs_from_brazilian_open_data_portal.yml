@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://i3geo.saude.gov.br/i3geo/ogc.php?outputFormat=JSON&request=GetFeature&service=WFS&typeName=ubs_funcionamento&version=1.0.0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 09 Apr 2020 00:12:13 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      X-Powered-By:
+      - PHP/5.3.3
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; subtype=geojson
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"FeatureCollection","features":[{"type":"Feature","properties":[{"gid":"27"},{"co_cnes":"2105462"},{"lat":"-15.3429340536125"},{"long":"-43.6703288759638"},{"no_fantasia":"UAPS NOVA ESPERANCA"},{"no_logradouro":"AV JOAO TEIXEIRA FILHO"},{"nu_endereco":"566"},{"no_bairro":"CENTRO"},{"nu_telefone":"(38)38331252"},{"co_cep":"39508000"},{"uf":"MG"},{"cidade":"Ja\u00edba"},{"ano_ubs_det":"2016"},{"mes_ubs_det":"5"}],"geometry":{"type":"Point","coordinates":[-43.670328875964,-15.342934053613]}}]}'
+    http_version: null
+  recorded_at: Thu, 09 Apr 2020 00:12:29 GMT
+recorded_with: VCR 5.1.0
