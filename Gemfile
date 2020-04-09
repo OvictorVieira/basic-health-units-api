@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'httparty'
 gem 'whenever', require: false
 gem 'sidekiq'
+gem 'devise'
+gem 'simple_token_authentication', '~> 1.17'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
