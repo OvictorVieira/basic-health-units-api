@@ -2,13 +2,12 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 
-  scope :api, defaults: { format: :json } do
-    devise_for :users, skip: :sessions
+  devise_for :users, skip: :all
 
-    devise_scope :user do
+  devise_scope :user do
 
-      get 'sign_in', to: 'devise/sessions#new'
-    end
+    post 'api/v1/sign_up', to: 'api/v1/registrations#create',
+                           :defaults => { :format => 'json' }
   end
 
   namespace :api do

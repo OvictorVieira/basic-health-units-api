@@ -11,6 +11,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'httparty'
 gem 'whenever', require: false
+gem 'redis'
 gem 'sidekiq'
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.17'
