@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V1::Sessions", type: :request do
+RSpec.describe 'Api::V1::Sessions', type: :request do
   describe 'POST /api/v1/sign_in' do
 
     context 'when a user tries to login to the API' do
@@ -8,7 +8,7 @@ RSpec.describe "Api::V1::Sessions", type: :request do
       let(:user) { FactoryBot.create(:user, name: Faker::Name.name, email: 'user@gmail.com') }
 
       it 'returns success' do
-        post '/api/v1/sign_in', headers: { 'ACCEPT': 'application/json' }, params: {
+        post api_v1_login_path, headers: { 'ACCEPT': 'application/json' }, params: {
           'user' => {
             'email' => user.email,
             'password' => user.password
@@ -26,7 +26,7 @@ RSpec.describe "Api::V1::Sessions", type: :request do
       end
 
       it 'returns unauthorized when using invalid email' do
-        post '/api/v1/sign_in', headers: { 'ACCEPT': 'application/json' }, params: {
+        post api_v1_login_path, headers: { 'ACCEPT': 'application/json' }, params: {
           'user' => {
             'email' => '__@gmail.com',
             'password' => user.password
@@ -60,7 +60,7 @@ RSpec.describe "Api::V1::Sessions", type: :request do
       it 'returns success' do
         current_authentication_token = user.authentication_token
 
-        post '/api/v1/sign_out', headers: { 'ACCEPT': 'application/json',
+        post api_v1_logout_path, headers: { 'ACCEPT': 'application/json',
                                             'X-User-Email': user.email,
                                             'X-User-Token': user.authentication_token }
 
