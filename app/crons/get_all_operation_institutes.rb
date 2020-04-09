@@ -27,9 +27,9 @@ class GetAllOperationInstitutes
     end
 
     def set_random_interval
-      ten_minute_interval = rand(1..60*10)
+      one_hour_interval = rand(0..60*60)
 
-      ten_minute_interval.seconds
+      one_hour_interval.seconds
     end
   end
 end
