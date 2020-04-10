@@ -35,6 +35,7 @@ Enviromnent_Production:
   when: manual
   only:
     - tags
+    - branches
   allow_failure: true
   script:
     - bundle install
