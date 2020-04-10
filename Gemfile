@@ -24,7 +24,6 @@ gem 'active_model_serializers', '~> 0.10.0', require: true, github: 'rails-api/a
 gem 'kaminari'
 gem 'api-pagination'
 
-gem 'activerecord-postgis-adapter'
 gem 'geocoder'
 
 gem 'bootsnap', '>= 1.4.2', require: false

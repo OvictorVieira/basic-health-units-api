@@ -5,6 +5,7 @@ FactoryBot.define do
     city { Faker::Address.city }
     neighborhood { Faker::Address.secondary_address }
     phone { }
-    geocode { "POINT(#{Faker::Address.latitude} #{Faker::Address.longitude})" }
+    latitude { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
   end
 end
