@@ -35,13 +35,13 @@ RSpec.describe 'Api::V1::InstitutesController', type: :request do
         create_fifteen_distant_ubs.call
 
         get api_v1_find_ubs_path, headers: {
-          'ACCEPT': 'application/json',
-          'X-User-Email': user.email,
-          'X-User-Token': user.authentication_token
-        },
-            params: {
-              'query': '-23.604936,-46.692999'
-            }
+                                    'ACCEPT': 'application/json',
+                                    'X-User-Email': user.email,
+                                    'X-User-Token': user.authentication_token
+                                  },
+                                  params: {
+                                    'query': '-23.604936,-46.692999'
+                                  }
 
         response_body = JSONHelper.json_parser(response.body)
 
