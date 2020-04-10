@@ -16,11 +16,8 @@ RSpec.describe InstituteCreatorWorker, type: :worker do
 
         InstituteCreatorWorker.new.perform(job['args'].first)
 
-        created_institute = Institute.find_by(name: job['args'].first['name'],
-                                              address: job['args'].first['address'],
-                                              neighborhood: job['args'].first['neighborhood'],
-                                              city: job['args'].first['city'],
-                                              phone: job['args'].first['phone'])
+        created_institute = Institute.find_by_latitude_and_longitude(job['args'].first['latitude'],
+                                                                     job['args'].first['longitude'])
 
         expect(created_institute.present?).to be_truthy
       end
