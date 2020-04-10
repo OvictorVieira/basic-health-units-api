@@ -1,70 +1,70 @@
-# Unidades Basicas de Saúde
+# Basic Health Units API
 
-Este projeto possui uma pasta chamada "docker", 
-dentro da mesma existe um arquivo chamado `docker-compose.yml` que é 
-responsável por construir o ambiente de desenvolvimento completo para o projeto.
+This project has a folder called "docker",
+there is a file called `docker-compose.yml` which is
+responsible for building the complete development environment for the project.
 
-#### Instalar o Docker e Docker-Compose
+#### Install Docker and Docker-Compose
 
-Para utilizar o ambiente que foi projetado utilizando os containers do `Docker` 
-é necessário que tenha instalado em sua maquina o `docker` e `docker-compose`, 
-assim, evitando quaisquer conflitos e dificuldades em subir o ambiente e o projeto.
+To use the environment that was designed using the `Docker` containers
+you need to have `docker` and` docker-compose` installed on your machine,
+thus, avoiding any conflicts and difficulties in raising the environment and the project.
 
-- [Instalar Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
-- [Instalar Docker-Compose](https://docs.docker.com/compose/install/#install-compose)
+- [Install Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
+- [Install Docker-Compose](https://docs.docker.com/compose/install/#install-compose)
 
-#### Utilizando o Docker
+#### Using Docker
 
-Ao clonar o projeto, basta acessar a pasta do projeto `basic-health-units` e executar o script de setup abaixo:
+When cloning the project, simply access the `basic-health-units` project folder and run the setup script below:
 
 ``
-    $ cd docker/
+    $ cd basic-health-units/docker/
     $ bash ./docker-setup.sh
 ``
 
-Em seguida, dentro do Container, execute o seguintes comandos:
+Then, inside the Container, execute the following commands:
 
 ``
    $ cd docker/
    $ bash ./application-setup.sh
 ``
 
-E para trabalhar no dia a dia, use o comando abaixo:
+And to work on a daily basis, use the command below:
 
 ``
-   $ cd docker/
-   $ bash ./docker-setup.sh
+   $ docker exec -it basic-health-units bash
 ``
 
-Os seguintes containers serão disponibilizados:
+The following containers will be made available:
 
-* basic-health-units - Container da aplicação com Ruby e o framework Ruby on Rails.
-* pgadmin - Container do PgAdmin, Ferramenta para Manipulação do Banco de Dados PostgreSQL
-* postgres_db - Container do Banco de Dados PostgreSql
-* portainer - Container Portainer, para gerenciar os Containers Locais
+* **basic-health-units**: Application container with Ruby and the Ruby on Rails framework.
+* **pgadmin**: PgAdmin Container, Tool for PostgreSQL Database Manipulation
+* **postgres**: PostgreSql Database Container
+* **portainer**: Container Portainer, to manage Local Containers
+* **redis**: Redis container, used next to the sidekiq
 
-#### Configurando o Gerenciador de Containers
+#### Configuring the Container Manager
 
-Após a execução dos comandos acima, seu ambiente estará pronto.
+After executing the commands above, your environment will be ready.
 
-para visualizar os containers, acesse o [Portainer](localhost:9000) e siga as imagems a seguir:
+To view and manipulate the containers, access [Portainer](localhost:9000) and follow the images below:
  
-* Crie um usuário e senha:
+* Create a username and password:
 
-![Criando usuário e senha no Portainer](https://firebasestorage.googleapis.com/v0/b/images-d10d2.appspot.com/o/criando_usuario_e_senha.png?alt=media&token=c53a78f2-1ad5-4698-b4a0-d971ab7e725d)
+![Creating username and password in Portainer](https://firebasestorage.googleapis.com/v0/b/images-d10d2.appspot.com/o/basic-health-units%2Fcreate%20user%20portainer.png?alt=media&token=125c5d5e-d11b-4ee3-9815-f17b007ee116)
 
-* Clique na primeira opção para configurar a conexão local:
+* Click on the first option to configure the local connection:
 
-![Configurando opção para configurar a conexão local](https://firebasestorage.googleapis.com/v0/b/images-d10d2.appspot.com/o/configurando_conexao_local.png?alt=media&token=c43a7fbf-023a-46c1-90cc-cf1257430bab)
+![Configuring option to configure the local connection](https://firebasestorage.googleapis.com/v0/b/images-d10d2.appspot.com/o/basic-health-units%2Fportainer%20parte%202.png?alt=media&token=89ff7d82-5313-4739-ae02-daaf4c8135eb)
 
-* Clique no botão `Local`:
+* Click on the button `Local`:
 
-![Acessando os containers locais](https://firebasestorage.googleapis.com/v0/b/images-d10d2.appspot.com/o/acessando_containers_locais.png?alt=media&token=1fe33f41-3279-4b52-bc20-df9521448b15)
+![Accessing local containers](https://firebasestorage.googleapis.com/v0/b/images-d10d2.appspot.com/o/basic-health-units%2Faccess%20containers.png?alt=media&token=668f860b-ab4b-4f6d-aad6-a3e706fc2b70)
 
-* Clique em `Containers`:
+* Click on `Containers`:
 
-![Acessando os containers](https://firebasestorage.googleapis.com/v0/b/images-d10d2.appspot.com/o/acessando_containers.png?alt=media&token=cb93b164-10b5-469a-a9cd-88d7e63714aa)
+![Accessing containers](https://firebasestorage.googleapis.com/v0/b/images-d10d2.appspot.com/o/basic-health-units%2Fselect%20containers.png?alt=media&token=07f726f8-d890-42b9-a479-3214cc30d8c0)
 
-* Listagem dos containers Locais:
+* List of local containers:
 
-![Listagem dos containers Locais](https://firebasestorage.googleapis.com/v0/b/images-d10d2.appspot.com/o/lista%20de%20containers.png?alt=media&token=5babef62-e03d-47e8-b714-b50a69e3f723)
+![List of local containers](https://firebasestorage.googleapis.com/v0/b/images-d10d2.appspot.com/o/basic-health-units%2Fcontainers%20list.png?alt=media&token=d2c4ae6d-54e6-49c7-96d8-dffcd90262e0)
