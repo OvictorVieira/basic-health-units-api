@@ -1,6 +1,8 @@
-class BrazilianOpenDataPortal::Formatters::InstituteFormatter < BaseFormatter
+class BrazilianOpenDataPortal::Formatters::InstituteFormatter
 
   class << self
+
+    include SpecialSymbolsCleaner
 
     def format(institutes)
       institutes.map do |institute|

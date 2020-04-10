@@ -1,0 +1,6 @@
+pt-BR:
+  users:
+    errors:
+      messages:
+        cnpj_already_exists: 'Não foi possível criar o seu usuário, o CNPJ informado já existe, verifique se os
+                              dados estão corretos e tente novamente.'
