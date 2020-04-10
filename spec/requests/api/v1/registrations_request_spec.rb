@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Api::V1::RegistrationsController', type: :request do
 
-  describe 'POST /api/users/sign_up' do
+  describe 'POST /api/v1/sign_up' do
 
     it 'returns success' do
       post api_v1_sign_up_path, params: {
