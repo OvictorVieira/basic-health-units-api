@@ -1,5 +1,7 @@
 # Basic Health Units API
 
+The API documentation is available by [Clicking here](https://documenter.getpostman.com/view/10569183/SzYgRv7S?version).
+
 #### Preparing the Development Environment
 
 To install the Development Environment, access the [Docker Readme](docker/README.md) and follow the instructions.
