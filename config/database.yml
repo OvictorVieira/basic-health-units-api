@@ -1,11 +1,12 @@
 common: &common
-  adapter: postgresql
+  adapter: postgis
+  postgis_extension: true
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   encoding: utf-8
-  username: <%= Rails.application.config.app.postgres.user %>
-  password: <%= Rails.application.config.app.postgres.password %>
-  database: <%= Rails.application.config.app.postgres.database %>
-  host: <%= Rails.application.config.app.postgres.host %>
+  username: <%= Rails.application.config.app.postgis.user %>
+  password: <%= Rails.application.config.app.postgis.password %>
+  database: <%= Rails.application.config.app.postgis.database %>
+  host: <%= Rails.application.config.app.postgis.host %>
 
 development:
   <<: *common

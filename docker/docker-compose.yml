@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  postgres:
-    image: postgres
-    container_name: postgres
+  postgis:
+    image: postgis/postgis
+    container_name: postgis
     env_file:
       - .env
     environment:
@@ -12,7 +12,7 @@ services:
     ports:
       - 15432:5432
     volumes:
-      - ../dump_postgres:/var/www/html/basic-health-units/dump
+      - ../dump_postgis:/var/www/html/basic-health-units/dump
     networks:
       - database-network
 
@@ -27,7 +27,7 @@ services:
     ports:
       - 16543:80
     depends_on:
-      - postgres
+      - postgis
     networks:
       - database-network
 
@@ -68,7 +68,7 @@ services:
       - 3000:3000
       - 80:80
     depends_on:
-      - postgres
+      - postgis
       - redis
     networks:
       - database-network
