@@ -32,7 +32,7 @@ Enviromnent_Test:
 Enviromnent_Production:
   stage: Production
   environment: production
-  when: manual
+  when: on_success
   only:
     - tags
   allow_failure: false
