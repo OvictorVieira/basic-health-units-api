@@ -35,7 +35,7 @@ Enviromnent_Production:
   when: manual
   only:
     - tags
-  allow_failure: true
+  allow_failure: false
   script:
     - bundle install
     - bundle exec rails db:migrate RAILS_ENV=production
