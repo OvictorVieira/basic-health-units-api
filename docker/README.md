@@ -7,7 +7,7 @@ responsible for building the complete development environment for the project.
 #### Install Docker and Docker-Compose
 
 To use the environment that was designed using the `Docker` containers
-you need to have `docker` and` docker-compose` installed on your machine,
+you need to have `docker` and `docker-compose` installed on your machine,
 thus, avoiding any conflicts and difficulties in raising the environment and the project.
 
 - [Install Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
@@ -17,23 +17,25 @@ thus, avoiding any conflicts and difficulties in raising the environment and the
 
 When cloning the project, simply access the `basic-health-units` project folder and run the setup script below:
 
-``
+```
     $ cd basic-health-units/docker/
+    
     $ bash ./docker-setup.sh
-``
+```
 
 Then, inside the Container, execute the following commands:
 
-``
+```
    $ cd docker/
+   
    $ bash ./application-setup.sh
-``
+```
 
 And to work on a daily basis, use the command below:
 
-``
+```
    $ docker exec -it basic-health-units bash
-``
+```
 
 The following containers will be made available:
 
