@@ -4,10 +4,10 @@ RSpec.describe 'Api::V1::InstitutesController', type: :request do
 
   describe 'GET /api/v1/find_ubs' do
 
-    context 'success' do
+    let(:user) { FactoryBot.create(:user, name: Faker::Name.name,
+                                   email: 'user@gmail.com') }
 
-      let(:user) { FactoryBot.create(:user, name: Faker::Name.name,
-                                     email: 'user@gmail.com') }
+    context 'success' do
 
       it 'when passes only query as a parameter and returns 10 near ubs' do
 
@@ -126,6 +126,23 @@ RSpec.describe 'Api::V1::InstitutesController', type: :request do
         expect(response_body['per_page']).to eql Api::V1::InstitutesController::DEFAULT_ITEMS_PER_PAGE
         expect(response_body['total_entries'].zero?).to be_truthy
         expect(response_body['entries'].empty?).to be_truthy
+      end
+    end
+
+    context 'fail' do
+
+      it 'when the query parameter is not informed in the request' do
+
+        get api_v1_find_ubs_path, headers: {
+                                      'ACCEPT': 'application/json',
+                                      'X-User-Email': user.email,
+                                      'X-User-Token': user.authentication_token
+                                  }
+
+        response_body = JSONHelper.json_parser(response.body)
+
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response_body['message']).to eql I18n.t('institutes.errors.messages.query_parameter_not_informed')
       end
     end
   end

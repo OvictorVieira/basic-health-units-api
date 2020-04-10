@@ -2,3 +2,6 @@ pt-BR:
   institutes:
     fields:
       field_not_informed: 'Não informado'
+    errors:
+      messages:
+        query_parameter_not_informed: "O parâmetro 'query' é obrigatório, por favor tente novamente."
