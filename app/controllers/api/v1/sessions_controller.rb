@@ -1,8 +1,8 @@
 class Api::V1::SessionsController < Devise::SessionsController
 
-  acts_as_token_authentication_handler_for User, except: [:login]
+  protect_from_forgery unless: -> { request.format.json? }
 
-  skip_before_action :verify_authenticity_token, only: [:login]
+  acts_as_token_authentication_handler_for User, except: [:login]
 
   def login
     @user = User.find_by_email(params['user']['email'])
@@ -19,9 +19,11 @@ class Api::V1::SessionsController < Devise::SessionsController
   end
 
   def logout
-    current_user.authentication_token = nil
+    unless all_signed_out?
+      current_user.authentication_token = nil
 
-    current_user.save!
+      current_user.save!
+    end
 
     render json: { message: I18n.t('devise.sessions.signed_out') },
            status: :ok

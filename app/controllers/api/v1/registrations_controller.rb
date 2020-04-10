@@ -1,5 +1,5 @@
 class Api::V1::RegistrationsController < Devise::RegistrationsController
-  skip_before_action :verify_authenticity_token, only: [:create]
+  protect_from_forgery unless: -> { request.format.json? }
 
   respond_to :json
 end
