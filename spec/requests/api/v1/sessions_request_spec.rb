@@ -9,9 +9,9 @@ RSpec.describe 'Api::V1::Sessions', type: :request do
 
       it 'returns success' do
         post api_v1_login_path, headers: { 'ACCEPT': 'application/json' }, params: {
-          'user' => {
-            'email' => user.email,
-            'password' => user.password
+          'user': {
+            'email': user.email,
+            'password': user.password
           }
         }
 
@@ -27,9 +27,9 @@ RSpec.describe 'Api::V1::Sessions', type: :request do
 
       it 'returns unauthorized when using invalid email' do
         post api_v1_login_path, headers: { 'ACCEPT': 'application/json' }, params: {
-          'user' => {
-            'email' => '__@gmail.com',
-            'password' => user.password
+          'user': {
+            'email': '__@gmail.com',
+            'password': user.password
           }
         }
 
@@ -39,9 +39,9 @@ RSpec.describe 'Api::V1::Sessions', type: :request do
 
       it 'returns unauthorized when using invalid password' do
         post '/api/v1/sign_in', headers: { 'ACCEPT': 'application/json' }, params: {
-          'user' => {
-            'email' => user.email,
-            'password' => '0000'
+          'user': {
+            'email': user.email,
+            'password': '0000'
           }
         }
 
