@@ -26,12 +26,6 @@ RSpec.describe Institute, type: :model do
       expect(institute).to_not be_valid
     end
 
-    it "is not valid without a phone" do
-      institute.phone = nil
-
-      expect(institute).to_not be_valid
-    end
-
     it "is not valid without a latitude" do
       institute.latitude = nil
 

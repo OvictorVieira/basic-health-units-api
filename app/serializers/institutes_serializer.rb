@@ -19,12 +19,16 @@ class InstitutesSerializer < ApplicationSerializer
         name: institute.name,
         address: institute.address,
         city: institute.city,
-        phone: institute.phone,
+        phone: phone(institute),
         geocode: {
           lat: institute.latitude,
           long: institute.longitude
         }
       }
+    end
+
+    def phone(institute)
+      institute.phone || I18n.t('institutes.fields.field_not_informed')
     end
   end
 end

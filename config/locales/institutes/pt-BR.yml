@@ -1,3 +1,4 @@
 pt-BR:
-  formatting:
-    field_not_informed: 'Não informado'
+  institutes:
+    fields:
+      field_not_informed: 'Não informado'
