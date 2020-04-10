@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
         post 'sign_in', to: 'sessions#login', as: :login
         post 'sign_out', to: 'sessions#logout', as: :logout
+
+        get 'find_ubs', to: 'institutes#find_ubs'
       end
     end
   end

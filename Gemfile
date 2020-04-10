@@ -22,7 +22,6 @@ gem 'simple_token_authentication', '~> 1.17'
 gem 'active_model_serializers', '~> 0.10.0', require: true, github: 'rails-api/active_model_serializers', branch: '0-10-stable'
 
 gem 'kaminari'
-gem 'api-pagination'
 
 gem 'geocoder'
 
