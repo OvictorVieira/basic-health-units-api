@@ -32,14 +32,8 @@ RSpec.describe Institute, type: :model do
       expect(institute).to_not be_valid
     end
 
-    it "is not valid without a latitude" do
-      institute.latitude = nil
-
-      expect(institute).to_not be_valid
-    end
-
-    it "is not valid without a longitude" do
-      institute.longitude = nil
+    it "is not valid without a geolocation" do
+      institute.geocode = nil
 
       expect(institute).to_not be_valid
     end

@@ -24,8 +24,7 @@ class BrazilianOpenDataPortal::Formatters::InstituteFormatter < BaseFormatter
         neighborhood: institute['no_bairro'],
         city: institute['cidade'],
         phone: remove_special_symbols_from(institute['nu_telefone']),
-        latitude: institute['lat'],
-        longitude: institute['long'],
+        geocode: "POINT(#{institute['lat']} #{institute['long']})",
       }
     end
 
