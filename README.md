@@ -66,6 +66,7 @@ and keeps the developer's machine integrated.
 * `simple_token_authentication`: It was used to work with *Devise*, performing user authentication in the API.
 * `kaminari`: It was used to perform data pagination
 * `geocoder`: It was used to perform data manipulation through geolocation
+* `rack-cors`: It was used to solve an external access problem in the API via Web App
 
 ##### Development/Test
 
