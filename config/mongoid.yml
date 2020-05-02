@@ -1,0 +1,30 @@
+common: &common
+  # Configure available database clients. (required)
+  clients:
+    # Defines the default client. (required)
+    default:
+      # Defines the name of the default database that Mongoid can connect to.
+      # (required).
+      database: <%= Rails.application.config.app.mongo.database %>
+      # Provides the hosts the default client can connect to. Must be an array
+      # of host:port pairs. (required)
+      hosts:
+        - <%= Rails.application.config.app.mongo.host %>
+      options:
+        # The name of the user for authentication.
+        user: <%= Rails.application.config.app.mongo.user %>
+
+        # The password of the user for authentication.
+        password: <%= Rails.application.config.app.mongo.password %>
+
+        # The database or source to authenticate the user against. (default: admin)
+        auth_source: <%= Rails.application.config.app.mongo.auth_source %>
+
+development:
+  <<: *common
+
+test:
+  <<: *common
+
+production:
+  <<: *common

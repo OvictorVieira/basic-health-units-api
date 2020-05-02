@@ -15,6 +15,7 @@ module BasicHealthUnits
     config.app = OpenStruct.new
     config.app.redis = OpenStruct.new
     config.app.postgres = OpenStruct.new
+    config.app.mongo = OpenStruct.new
     config.app.sidekiq = OpenStruct.new
 
     config.app.redis.host = Rails.application.credentials[:redis][Rails.env.to_sym][:host]
@@ -29,5 +30,11 @@ module BasicHealthUnits
 
     config.app.sidekiq.user = Rails.application.credentials[:sidekiq][Rails.env.to_sym][:user]
     config.app.sidekiq.password = Rails.application.credentials[:sidekiq][Rails.env.to_sym][:password]
+
+    config.app.mongo.user = Rails.application.credentials[:mongo][Rails.env.to_sym][:user]
+    config.app.mongo.password = Rails.application.credentials[:mongo][Rails.env.to_sym][:password]
+    config.app.mongo.database = Rails.application.credentials[:mongo][Rails.env.to_sym][:database]
+    config.app.mongo.host = Rails.application.credentials[:mongo][Rails.env.to_sym][:host]
+    config.app.mongo.auth_source = Rails.application.credentials[:mongo][Rails.env.to_sym][:auth_source]
   end
 end

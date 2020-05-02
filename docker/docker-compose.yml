@@ -52,6 +52,28 @@ services:
     networks:
       - database-network
 
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: BhU2020!
+    ports:
+      - 27017:27017
+    networks:
+      - database-network
+
+  mongoclient:
+    image: mongoclient/mongoclient
+    container_name: mongoclient
+    depends_on:
+      - mongodb
+    ports:
+      - 8081:3000
+    networks:
+      - database-network
+
   application:
     tty: true
     stdin_open: true
@@ -69,6 +91,7 @@ services:
       - 80:80
     depends_on:
       - postgres
+      - mongodb
       - redis
     networks:
       - database-network

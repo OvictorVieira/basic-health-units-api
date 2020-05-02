@@ -9,11 +9,16 @@ class Api::V1::InstitutesController < ApplicationController
   def find_ubs
     all_ubs = Institute.all
 
-    @nearby_institutes = all_ubs.ubs_within_ten_km_ordered_by_distance(latitude_param, longitude_param)
+    nearby_institutes = all_ubs.ubs_within_ten_km_ordered_by_distance(
+        latitude_param,
+        longitude_param,
+        @page,
+        @per_page
+    )
 
     total_ubs = all_ubs.count
 
-    serialized_institutes = InstitutesSerializer.serialize(paginate_institutes, @page, @per_page, total_ubs)
+    serialized_institutes = InstitutesSerializer.serialize(nearby_institutes, @page, @per_page, total_ubs)
 
     render json: serialized_institutes, status: :ok
   end
@@ -26,12 +31,6 @@ class Api::V1::InstitutesController < ApplicationController
 
   def longitude_param
     params['query'].split(',').last
-  end
-
-  def paginate_institutes
-    @institutes = @nearby_institutes
-                    .page(@page)
-                    .per(@per_page)
   end
 
   def set_page

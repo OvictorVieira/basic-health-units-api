@@ -4,11 +4,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.6'
 
 gem 'rails', '~> 6.0.0'
+
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'mongoid', '~> 7.0.5'
+
 gem 'puma', '~> 3.11'
+
 gem 'sass-rails', '~> 5'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
+
 gem 'httparty'
 
 gem 'redis'
@@ -20,6 +25,7 @@ gem 'simple_token_authentication', '~> 1.17'
 gem 'active_model_serializers', '~> 0.10.0', require: true, github: 'rails-api/active_model_serializers', branch: '0-10-stable'
 
 gem 'kaminari'
+gem 'kaminari-mongoid'
 
 gem 'geocoder'
 
