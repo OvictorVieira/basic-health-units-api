@@ -1,5 +1,7 @@
 # Basic Health Units API
 
+Back-end API written in Ruby on Rails to serve data for the [Basic Health Units Plataform](https://gitlab.com/victor.h.souza.vieira/basic-health-units-plataform)
+
 The API documentation is available by [Clicking here](https://documenter.getpostman.com/view/10569183/SzYgRv7S?version).
 
 #### Preparing the Development Environment
