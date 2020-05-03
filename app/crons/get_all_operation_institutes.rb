@@ -2,6 +2,8 @@ class GetAllOperationInstitutes
 
   class << self
 
+    include InstituteCreationPolicy
+
     def fetch
       brazilian_portal_communicator = BrazilianOpenDataPortal::Api::Communicator.new(Core::CommunicatorBase)
 
@@ -23,7 +25,12 @@ class GetAllOperationInstitutes
     private
 
     def enqueue_creation_of_institute(institutes)
-      institutes.map { |institute| InstituteCreatorWorker.perform_in(set_random_interval, institute) }
+
+      institutes.map do |institute|
+
+        InstituteCreatorWorker
+            .perform_in(set_random_interval, institute) unless institute_already_exists?(institute)
+      end
     end
 
     def set_random_interval
