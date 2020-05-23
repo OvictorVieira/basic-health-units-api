@@ -90,12 +90,12 @@ RUN addgroup -gid 1000 docker && adduser docker -gid 1000 --uid 1000 --disabled-
 RUN sh -c "echo 'docker ALL=NOPASSWD: ALL' >> /etc/sudoers"
 
 ENV TZ=America/Sao_Paulo
-RUN mkdir -p /var/www/html/basic-health-units
-RUN chown -Rf docker:docker /var/www/html/basic-health-units
+RUN mkdir -p /var/www/html/basic-health-units-api
+RUN chown -Rf docker:docker /var/www/html/basic-health-units-api
 RUN apt-get update
 RUN apt-get install vim -y
 USER docker
 
 RUN echo 'export PS1="\[\\033[38m\]\u\[\\033[32m\] \w\[\\033[31m\]\`git branch 2>/dev/null | grep \"^\*\" | sed -r \"s/\*\ (.*)/ \(\\1\)/\"\`\[\\033[37m\]$\[\\033[00m\] "' >> /home/docker/.bashrc
 
-WORKDIR /var/www/html/basic-health-units
+WORKDIR /var/www/html/basic-health-units-api
