@@ -25,7 +25,7 @@ gem 'geocoder'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'rack-cors', '~> 0.4.0'
+gem 'rack-cors', '~> 1.0.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
