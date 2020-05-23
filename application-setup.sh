@@ -1,4 +1,6 @@
 #!/bin/bash
+bundle install
+
 rails db:create
 
 rails db:create RAILS_ENV=test

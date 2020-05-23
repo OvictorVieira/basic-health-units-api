@@ -15,10 +15,10 @@ thus, avoiding any conflicts and difficulties in raising the environment and the
 
 #### Using Docker
 
-When cloning the project, simply access the `basic-health-units` project folder and run the setup script below:
+When cloning the project, simply access the `basic-health-units-api` project folder and run the setup script below:
 
 ```
-    $ cd basic-health-units/docker/
+    $ cd basic-health-units-api/
     
     $ bash ./docker-setup.sh
 ```
@@ -26,26 +26,27 @@ When cloning the project, simply access the `basic-health-units` project folder 
 Then, inside the Container, execute the following commands:
 
 ```
-   $ cd docker/
-   
    $ bash ./application-setup.sh
 ```
 
 And to work on a daily basis, use the command below:
 
 ```
-   $ docker exec -it basic-health-units bash
+   $ bash ./initiate-work.sh
 ```
 
 The following containers will be made available:
 
-* **basic-health-units**: Application container with Ruby and the Ruby on Rails framework.
+* **basic-health-units-api**: Application container with Ruby and the Ruby on Rails framework.
 * **pgadmin**: PgAdmin Container, Tool for PostgreSQL Database Manipulation
 * **postgres**: PostgreSql Database Container
-* **portainer**: Container Portainer, to manage Local Containers
 * **redis**: Redis container, used next to the sidekiq
 
 #### Configuring the Container Manager
+
+Install Portainer, to manage Local Containers:
+
+[Portainer Documentation](https://www.portainer.io/installation/)
 
 After executing the commands above, your environment will be ready.
 
