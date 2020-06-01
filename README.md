@@ -4,6 +4,9 @@ Back-end API written in Ruby on Rails to serve data for the [Basic Health Units 
 
 The API documentation is available by [Clicking here](https://documenter.getpostman.com/view/10569183/SzYgRv7S?version).
 
+
+<img src="https://img.shields.io/static/v1?label=COVERAGE&message=100&color=green&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=Licese&message=MIT&color=blue&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=Ruby&message=2.6.6&color=red&style=for-the-badge&logo=RUBY"/> <img src="https://img.shields.io/static/v1?label=Ruby%20on%20Rails&message=6.0.0&color=red&style=for-the-badge&logo=Ruby"/>
+
 #### Preparing the Development Environment
 
 To install the Development Environment, access the [Docker Readme](docker/README.md) and follow the instructions.
@@ -76,3 +79,9 @@ and keeps the developer's machine integrated.
 * `faker`: It was used to create fictitious data in the Tests.
 * `webmock`: It was used to create request mocks in tests.
 * `vcr`: It was used to create Mocks of requests, not to perform them after creating the mocks.
+
+## Licence
+
+The [MIT License]() (MIT)
+
+Copyright :copyright: 2020 - Basic Health Units
