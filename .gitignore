@@ -25,3 +25,5 @@ Case.pdf
 
 /coverage
 /docker/.env
+
+*.DS_Store
